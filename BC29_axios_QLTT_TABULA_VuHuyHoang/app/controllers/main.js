@@ -1,5 +1,6 @@
 var service = new Services();
 var validation = new Validation();
+var danhSachND = [];
 
 function getEle(id) {
   return document.getElementById(id);
@@ -10,6 +11,7 @@ function getUserList() {
     .getUserListByApi()
     .then(function (result) {
       renderUserList(result.data);
+      danhSachND = result.data;
     })
     .catch(function (error) {
       console.log(error);
@@ -56,7 +58,23 @@ function defaultStatus() {
   getEle("loaiNguoiDung").value = "Chọn loại người dùng";
   getEle("loaiNgonNgu").value = "Chọn ngôn ngữ";
   getEle("MoTa").value = "";
+
+  getEle("tbTK").innerHTML = "";
+  getEle("tbHoTen").innerHTML = "";
+  getEle("tbMatKhau").innerHTML = "";
+  getEle("tbEmail").innerHTML = "";
+  getEle("tbHinhAnh").innerHTML = "";
+  getEle("tbND").innerHTML = "";
+  getEle("tbNgonNgu").innerHTML = "";
+  getEle("tbMoTa").innerHTML = "";
+
+  getEle("TaiKhoan").disabled = false;
 }
+
+getEle("btnThemNguoiDung").onclick = function () {
+  defaultStatus();
+};
+
 /**
  * Xóa người dùng
  */
@@ -84,9 +102,7 @@ getEle("btnThemNguoiDung").onclick = function () {
 /**
  * Lấy thông tin người dùng
  */
-function layThongTinND() {
-  getUserList();
-
+function layThongTinND(isAdd) {
   var taiKhoan = getEle("TaiKhoan").value;
   var hoTen = getEle("HoTen").value;
   var matKhau = getEle("MatKhau").value;
@@ -100,13 +116,81 @@ function layThongTinND() {
   var isValid = true;
 
   //taiKhoan
+  if (isAdd) {
+    isValid &=
+      validation.kiemTraRong(taiKhoan, "tbTK", "Vui lòng nhập tài khoản") &&
+      validation.kiemTraTKTonTai(
+        taiKhoan,
+        "tbTK",
+        "Tài khoản đã tồn tại",
+        danhSachND
+      );
+  }
+
+  //hoTen
   isValid &=
-    validation.kiemTraRong(taiKhoan, "tbTK", "Vui lòng nhập tài khoản") &&
-    validation.kiemTraTKTonTai(
-      taiKhoan,
-      "tbTK",
-      "Tài khoản đã tồn tại",
-      
+    validation.kiemTraRong(hoTen, "tbHoTen", "Vui lòng nhập họ tên") &&
+    validation.kiemTraChuoiKiTu(
+      hoTen,
+      "tbHoTen",
+      "Vui lòng nhập đúng chuỗi kí tự"
+    );
+
+  //matKhau
+  isValid &=
+    validation.kiemTraRong(matKhau, "tbMatKhau", "Vui lòng nhập mật khẩu") &&
+    validation.kiemTraMatKhau(
+      matKhau,
+      "tbMatKhau",
+      "Mật khẩu phải chứa 6-8 ký tự, có ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự đặc biệt"
+    ) &&
+    validation.kiemTraDoDaiKiTu(
+      matKhau,
+      "tbMatKhau",
+      6,
+      8,
+      "Mật khẩu phải chứa 6-8 ký tự, có ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự đặc biệt"
+    );
+
+  //email
+  isValid &=
+    validation.kiemTraRong(email, "tbEmail", "Vui lòng nhập email") &&
+    validation.kiemTraEmail(
+      email,
+      "tbEmail",
+      "Vui lòng nhập đúng định dạng email"
+    );
+
+  //hinhAnh
+  isValid &= validation.kiemTraRong(
+    hinhAnh,
+    "tbHinhAnh",
+    "Vui lòng nhập hình ảnh"
+  );
+
+  //loaiND
+  isValid &= validation.kiemTraChon(
+    "loaiNguoiDung",
+    "tbND",
+    "Vui lòng chọn loại người dùng"
+  );
+
+  //loaiND
+  isValid &= validation.kiemTraChon(
+    "loaiNgonNgu",
+    "tbNgonNgu",
+    "Vui lòng chọn ngôn ngữ"
+  );
+
+  //moTa
+  isValid &=
+    validation.kiemTraRong(moTa, "tbMoTa", "Vui lòng nhập mô tả") &&
+    validation.kiemTraDoDaiKiTu(
+      moTa,
+      "tbMoTa",
+      0,
+      60,
+      "Mô tả không được vượt quá 60 kí tự"
     );
 
   if (!isValid) return;
@@ -131,28 +215,8 @@ function layThongTinND() {
  * Thêm người dùng
  */
 function addUser() {
-  // var taiKhoan = getEle("TaiKhoan").value;
-  // var hoTen = getEle("HoTen").value;
-  // var matKhau = getEle("MatKhau").value;
-  // var email = getEle("Email").value;
-  // var hinhAnh = getEle("HinhAnh").value;
-  // var loaiND = getEle("loaiNguoiDung").value;
-  // var ngonNgu = getEle("loaiNgonNgu").value;
-  // var moTa = getEle("MoTa").value;
-
-  // //new User
-  // var nguoiDung = new NguoiDung(
-  //   "",
-  //   taiKhoan,
-  //   hoTen,
-  //   matKhau,
-  //   email,
-  //   loaiND,
-  //   ngonNgu,
-  //   moTa,
-  //   hinhAnh
-  // );
-  var nguoiDung = layThongTinND();
+  var nguoiDung = layThongTinND(true);
+  console.log(nguoiDung);
   if (nguoiDung) {
     service
       .addUserApi(nguoiDung)
@@ -177,7 +241,7 @@ function editUser(id) {
   document.getElementsByClassName("modal-footer")[0].innerHTML = footer;
   // console.log(123);
   service
-    .editUserApi(id)
+    .getUserApi(id)
     .then(function (result) {
       getEle("TaiKhoan").value = result.data.taiKhoan;
       getEle("HoTen").value = result.data.hoTen;
@@ -187,36 +251,21 @@ function editUser(id) {
       getEle("loaiNguoiDung").value = result.data.loaiND;
       getEle("loaiNgonNgu").value = result.data.ngonNgu;
       getEle("MoTa").value = result.data.moTa;
+
+      // console.log(result.data);
     })
     .catch(function (error) {
       console.log(error);
     });
+
+  getEle("TaiKhoan").disabled = "true";
 }
 
 /**
  * Cập nhật người dùng
  */
 function updateUser(id) {
-  var taiKhoan = getEle("TaiKhoan").value;
-  var hoTen = getEle("HoTen").value;
-  var matKhau = getEle("MatKhau").value;
-  var email = getEle("Email").value;
-  var hinhAnh = getEle("HinhAnh").value;
-  var loaiND = getEle("loaiNguoiDung").value;
-  var ngonNgu = getEle("loaiNgonNgu").value;
-  var moTa = getEle("MoTa").value;
-
-  var nguoiDung = new NguoiDung(
-    id,
-    taiKhoan,
-    hoTen,
-    matKhau,
-    email,
-    loaiND,
-    ngonNgu,
-    moTa,
-    hinhAnh
-  );
+  var nguoiDung = layThongTinND(false);
 
   service
     .updateUserApi(nguoiDung)

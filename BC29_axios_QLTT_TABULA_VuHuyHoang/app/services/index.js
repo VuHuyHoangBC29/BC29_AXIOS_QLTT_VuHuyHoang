@@ -21,7 +21,7 @@ function Services() {
     })
   }
 
-  this.editUserApi = function (id) {
+  this.getUserApi = function (id) {
     return axios ({
       url: `https://628b995f667aea3a3e32d1a4.mockapi.io/api/QuanLyNguoiDung/${id}`,
       method: "GET",
