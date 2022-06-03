@@ -1,0 +1,52 @@
+#testimonials {
+  .content {
+    .row {
+      .card {
+        margin-bottom: 2rem;
+        border-radius: 1rem;
+        border: none;
+        overflow: hidden;
+        transition: 0.5s;
+
+        .card-body {
+          .country {
+            @include styleText(0.8rem, $fw-6, $color-3);
+            @media screen and (max-width: 991px) {
+              font-size: 0.8rem;
+              margin-bottom: 0.5rem;
+            }
+          }
+
+          .name {
+            @include styleText(1.5rem, $fw-7, $color-5);
+
+            @media screen and (max-width: 1199px) {
+              font-size: 1.2rem;
+            }
+            @media screen and (max-width: 992px) {
+              font-size: 1rem;
+            }
+          }
+
+          .description {
+            @include styleText(0.8rem, $fw-5, $color-6);
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 10px 30px grey;
+        }
+
+        .img__top {
+          overflow: hidden;
+          img {
+            transition: 0.7s;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

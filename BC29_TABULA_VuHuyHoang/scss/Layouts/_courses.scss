@@ -1,0 +1,147 @@
+#course {
+  background: url(./../../images/accent_bottom_wave_01.png) bottom/contain
+    no-repeat;
+  padding: 100px 0;
+  // height: 700px;
+
+  .content {
+    .row {
+      .left {
+        background: url(./../../images/conatct_inner.png) center/contain
+          no-repeat;
+        height: 100%;
+        width: 100%;
+      }
+
+      .right {
+        border: none;
+        padding: 3rem 1rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px grey;
+        background-color: $color-7;
+
+        .course__form {
+          form {
+            // display: flex;
+            // flex-direction: column;
+            .contact__row {
+              margin-bottom: 1rem;
+              .contact__name {
+                padding-right: 1rem;
+                position: relative;
+
+                input {
+                  padding-left: 2.5rem;
+                  border-radius: 2rem;
+                }
+
+                span {
+                  position: absolute;
+                  left: 15px;
+                  top: 8px;
+
+                  i {
+                    color: $color-3;
+                  }
+                }
+              }
+
+              .contact__email {
+                @extend .contact__name;
+                padding: 0;
+              }
+            }
+
+            .language__select {
+              position: relative;
+              #language {
+                padding-left: 2.3rem;
+                border-radius: 2rem;
+              }
+              span {
+                position: absolute;
+                top: 8px;
+                left: 12px;
+
+                i {
+                  color: $color-3;
+                }
+              }
+            }
+
+            .message__type {
+              position: relative;
+              textarea {
+                padding-top: 0.7rem;
+                padding-left: 2.3rem;
+                border-radius: 1.5rem;
+              }
+
+              span {
+                position: absolute;
+                top: 12px;
+                left: 14px;
+
+                i {
+                  color: $color-3;
+                }
+              }
+            }
+
+            // button {
+            //   @include styleButton(
+            //     1px solid $color-3,
+            //     0.8rem,
+            //     4rem,
+            //     $color-7,
+            //     2rem
+            //   );
+            //   // border: 1px solid $color-3;
+            //   // padding: 0.8rem 4rem;
+            //   // background-color: $color-7;
+            //   // border-radius: 2rem;
+            //   transition: 0.2s;
+            //   box-shadow: 0 0 0 3em $color-3 inset;
+            //   @include styleText(0.8rem, $fw-6, $color-7);
+
+            //   &:hover {
+            //     box-shadow: 0 0 0 1px $color-3 inset;
+            //     @include styleText(0.8rem, $fw-6, $color-3);
+            //   }
+            // }
+          }
+        }
+      }
+    }
+  }
+}
+
+//responsive
+@media screen and (max-width: 767px) {
+  #course {
+    .content {
+      .row {
+        .left {
+          height: 400px;
+          margin-bottom: 2rem;
+        }
+        .right {
+          padding: 1rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #course {
+    .content {
+      .row {
+        .left {
+          height: 300px;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}

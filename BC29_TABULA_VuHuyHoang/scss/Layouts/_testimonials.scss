@@ -1,0 +1,30 @@
+#testimonials {
+  background: url(./../../images/Wave_White_bottom_right_shape_01.png)
+    center/auto no-repeat;
+  background-color: $color-2;
+
+  .content {
+    padding: 30px 0;
+  }
+}
+
+//responsive
+@media screen and (max-width: 991px) {
+  #testimonials {
+    .content {
+      .row {
+        .card {
+          .card-body {
+            p:first-of-type {
+              @include styleText(0.5rem, $fw-6, $color-3);
+            }
+
+            h3 {
+              @include styleText(1rem, $fw-7, $color-5);
+            }
+          }
+        }
+      }
+    }
+  }
+}

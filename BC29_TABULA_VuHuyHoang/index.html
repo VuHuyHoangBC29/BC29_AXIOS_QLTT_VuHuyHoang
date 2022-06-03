@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tabula</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- Animate CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header id="header" class="container wow animate__animated animate__fadeIn">
+      <nav class="navbar navbar-expand-md navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#"
+          ><img src="./images/crest.png" alt=""
+        /></a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Elements</a>
+            </li>
+          </ul>
+          <!-- 
+          <a class="navbar__phone" href="tel: (+1) 555 234-8765"
+            ><div class="content">
+              <i class="fas fa-phone"></i><span>(+1) 555 234-8765</span>
+            </div></a
+          > -->
+
+          <button class="navbar__phone">
+            <i class="fas fa-phone"></i>(+1) 555 234-8765
+          </button>
+
+          <div class="navbar__socials">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Carousel -->
+    <section id="carousel">
+      <div class="carousel__content container">
+        <div class="row">
+          <div
+            class="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex align-items-center"
+          >
+            <div
+              class="left wow animate__animated animate__fadeInLeft"
+              data-wow-delay="0.3s"
+            >
+              <p>ABOUT US</p>
+              <h1>
+                The language <br />
+                teaching experts
+              </h1>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div
+              class="right wow animate__animated animate__fadeIn"
+              data-wow-delay="0.6s"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <div class="content container">
+        <div class="row" id="testimonialList">
+          <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card wow animate__animated animate__fadeInLeft">
+              <div class="img__top">
+                <img class="card-img-top" src="./images/teacher_1.jpg" alt="" />
+              </div>
+              <div
+                class="card-body d-flex flex-column align-items-center text-center"
+              >
+                <p class="country">ITALIAN</p>
+                <h3 class="name">July Roberts</h3>
+                <p class="description text-center">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card wow animate__animated animate__fadeInLeft">
+              <div class="img__top">
+                <img class="card-img-top" src="./images/teacher_2.jpg" alt="" />
+              </div>
+              <div
+                class="card-body d-flex flex-column align-items-center text-center"
+              >
+                <p class="country">FRENCH</p>
+                <h3 class="name">Jon Stone</h3>
+                <p class="description text-center">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card wow animate__animated animate__fadeInLeft">
+              <div class="img__top">
+                <img class="card-img-top" src="./images/teacher_3.jpg" alt="" />
+              </div>
+              <div
+                class="card-body d-flex flex-column align-items-center text-center"
+              >
+                <p class="country">JAPANESE</p>
+                <h3 class="name">Emma Stone</h3>
+                <p class="description text-center">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card wow animate__animated animate__fadeInLeft">
+              <div class="img__top">
+                <img class="card-img-top" src="./images/teacher_4.jpg" alt="" />
+              </div>
+              <div
+                class="card-body d-flex flex-column align-items-center text-center"
+              >
+                <p class="country">CHINESE</p>
+                <h3 class="name">Mark Lee</h3>
+                <p class="description text-center">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card wow animate__animated animate__fadeInLeft">
+              <div class="img__top">
+                <img class="card-img-top" src="./images/teacher_5.jpg" alt="" />
+              </div>
+              <div
+                class="card-body d-flex flex-column align-items-center text-center"
+              >
+                <p class="country">RUSSIAN</p>
+                <h3 class="name">John Doe</h3>
+                <p class="description text-center">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card wow animate__animated animate__fadeInLeft">
+              <div class="img__top">
+                <img class="card-img-top" src="./images/teacher_6.jpg" alt="" />
+              </div>
+              <div
+                class="card-body d-flex flex-column align-items-center text-center"
+              >
+                <p class="country">SWEDEN</p>
+                <h3 class="name">Jane Smith</h3>
+                <p class="description text-center">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card wow animate__animated animate__fadeInLeft">
+              <div class="img__top">
+                <img class="card-img-top" src="./images/teacher_7.jpg" alt="" />
+              </div>
+              <div
+                class="card-body d-flex flex-column align-items-center text-center"
+              >
+                <p class="country">SPANISH</p>
+                <h3 class="name">Hanna Alverez</h3>
+                <p class="description text-center">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card wow animate__animated animate__fadeInLeft">
+              <div class="img__top">
+                <img class="card-img-top" src="./images/teacher_8.jpg" alt="" />
+              </div>
+              <div
+                class="card-body d-flex flex-column align-items-center text-center"
+              >
+                <p class="country">ITALIAN</p>
+                <h3 class="name">July Roberts</h3>
+                <p class="description text-center">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Course -->
+    <section id="course">
+      <div class="content container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-7">
+            <div
+              class="left wow animate__animated animate__fadeInLeft"
+              data-wow-delay="0.3s"
+            ></div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-5">
+            <div
+              class="right wow animate__animated animate__fadeIn"
+              data-wow-delay="0.6s"
+            >
+              <div class="course__form">
+                <h1 class="text-center">Find Your Course</h1>
+                <form>
+                  <div class="contact__row d-flex">
+                    <div class="contact__name">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name"
+                        id="name"
+                      /><span><i class="far fa-user"></i></span>
+                    </div>
+
+                    <div class="contact__email">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Email"
+                        id="email"
+                      /><span><i class="far fa-envelope"></i></span>
+                    </div>
+                  </div>
+
+                  <div class="contact__row language__select">
+                    <select class="form-control" name="" id="language">
+                      <option>English</option>
+                      <option>French</option>
+                      <option>Spanish</option>
+                      <option>German</option></select
+                    ><span><i class="fas fa-graduation-cap"></i></span>
+                  </div>
+
+                  <div class="contact__row message__type">
+                    <textarea
+                      class="form-control"
+                      name=""
+                      id="message"
+                      cols="30"
+                      rows="10"
+                      placeholder="Message"
+                    ></textarea>
+                    <span><i class="fas fa-comment-dots"></i></span>
+                  </div>
+
+                  <button>SEND</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="footer__content container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-3">
+            <div
+              class="contact wow animate__animated animate__fadeInLeft"
+              data-wow-delay="0.3s"
+            >
+              <h3 class="text-white">Contact us</h3>
+              <p class="text-white">
+                <i class="fas fa-map-marker-alt"></i> Franklin St, Greenpoint
+                Ave
+              </p>
+              <p class="text-white">
+                <i class="fas fa-phone-alt"></i> +2342 5446 67
+              </p>
+              <p class="text-white">
+                <i class="fas fa-clock"></i> Monday - Friday: 8 AM - 5 PM
+              </p>
+
+              <div class="contact__socials">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-3">
+            <div
+              class="links wow animate__animated animate__fadeInLeft"
+              data-wow-delay="0.6s"
+            >
+              <h3 class="text-white">Quick Links</h3>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Schedule</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-3">
+            <div
+              class="about wow animate__animated animate__fadeInLeft"
+              data-wow-delay="0.9s"
+            >
+              <h3 class="text-white">About</h3>
+              <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Get Quote</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-md-6 col-lg-3">
+            <div
+              class="newsletter wow animate__animated animate__fadeInLeft"
+              data-wow-delay="1.2s"
+            >
+              <h3 class="text-white">Newsletter</h3>
+              <div class="newsletter__content">
+                <input
+                  type="text"
+                  id="newsletter__email"
+                  class="form-control"
+                  placeholder="Your email"
+                />
+                <button>SUBSCRIBE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Wowjs -->
+    <script src="/libs/wowjs/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+
+    <!-- Axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+      integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./app/services/index.js"></script>
+    <script src="./app/main.js"></script>
+  </body>
+</html>
