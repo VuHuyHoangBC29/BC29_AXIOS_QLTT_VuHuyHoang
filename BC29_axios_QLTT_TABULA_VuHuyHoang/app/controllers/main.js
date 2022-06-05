@@ -265,7 +265,27 @@ function editUser(id) {
  * Cập nhật người dùng
  */
 function updateUser(id) {
-  var nguoiDung = layThongTinND(false);
+  // var nguoiDung = layThongTinND(false);
+  var taiKhoan = getEle("TaiKhoan").value;
+  var hoTen = getEle("HoTen").value;
+  var matKhau = getEle("MatKhau").value;
+  var email = getEle("Email").value;
+  var hinhAnh = getEle("HinhAnh").value;
+  var loaiND = getEle("loaiNguoiDung").value;
+  var ngonNgu = getEle("loaiNgonNgu").value;
+  var moTa = getEle("MoTa").value;
+
+  var nguoiDung = new NguoiDung(
+    id,
+    taiKhoan,
+    hoTen,
+    matKhau,
+    email,
+    loaiND,
+    ngonNgu,
+    moTa,
+    hinhAnh
+  );
 
   service
     .updateUserApi(nguoiDung)

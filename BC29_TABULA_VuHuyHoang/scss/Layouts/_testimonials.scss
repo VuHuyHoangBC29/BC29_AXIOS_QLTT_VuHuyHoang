@@ -1,6 +1,6 @@
 #testimonials {
   background: url(./../../images/Wave_White_bottom_right_shape_01.png)
-    center/auto no-repeat;
+    center/cover no-repeat;
   background-color: $color-2;
 
   .content {
@@ -23,6 +23,18 @@
               @include styleText(1rem, $fw-7, $color-5);
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #testimonials {
+    .content {
+      .row {
+        .col-sm-6 {
+          margin-bottom: 1.5rem;
         }
       }
     }

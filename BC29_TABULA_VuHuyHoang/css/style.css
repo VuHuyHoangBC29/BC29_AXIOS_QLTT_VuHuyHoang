@@ -204,7 +204,7 @@ header .navbar .navbar-collapse .navbar__socials a:hover i {
 }
 
 #testimonials {
-  background: url(./../../images/Wave_White_bottom_right_shape_01.png) center/auto no-repeat;
+  background: url(./../../images/Wave_White_bottom_right_shape_01.png) center/cover no-repeat;
   background-color: #dcd1f1;
 }
 
@@ -222,6 +222,12 @@ header .navbar .navbar-collapse .navbar__socials a:hover i {
     font-size: 1rem;
     font-weight: 700;
     color: #191919;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #testimonials .content .row .col-sm-6 {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -532,6 +538,7 @@ header .navbar .navbar-collapse .navbar__socials a:hover i {
   overflow: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  height: 100%;
 }
 
 #testimonials .content .row .card .card-body .country {
