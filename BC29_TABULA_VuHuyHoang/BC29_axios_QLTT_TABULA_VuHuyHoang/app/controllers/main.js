@@ -297,3 +297,4 @@ function updateUser(id) {
       console.log(error);
     });
 }
+console.log(danhSachND);
